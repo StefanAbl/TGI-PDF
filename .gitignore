@@ -1,6 +1,7 @@
 #The downloaded pdfs and the final pdf
 pdf/*
-*.pdf
+Uncomment this to prevent the final pdf from being uploaded
+#*.pdf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
