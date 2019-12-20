@@ -17,7 +17,7 @@ def getlinks(debug = False):
     for s in soup:
         if ("vorlesung" in s['href'] or "uebung" in s['href']) and not "uebungsblatt" in s['href']:
             pdfs.append("https://i11www.iti.kit.edu" + s['href'])
-            print("https://i11www.iti.kit.edu" + s['href'])
+            #print("https://i11www.iti.kit.edu" + s['href'])
     return pdfs
 
 def download(paths):
