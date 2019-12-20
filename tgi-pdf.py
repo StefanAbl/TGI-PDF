@@ -4,6 +4,7 @@ from urllib.request import urlopen, Request
 from bs4 import BeautifulSoup
 from PyPDF2 import PdfFileReader, PdfFileWriter
 import ntpath
+import os
 
 def getlinks(debug = False):
     url = "https://i11www.iti.kit.edu/teaching/winter2019/tgi/index"
@@ -39,10 +40,15 @@ def merge_pdfs(paths, output):
     with open(output, 'wb') as out:
         pdf_writer.write(out)
 
+def removeFiles(paths):
+    for path in paths:
+        path = "pdfs/" + ntpath.basename(path)
+        os.remove(path)
 
 if __name__ == "__main__":
     #print(sys.version)
     paths = getlinks(False)
     download(paths)
     merge_pdfs(paths, output='tgi.pdf')
+    removeFiles(paths)
     #main(sys.argv[1:])
